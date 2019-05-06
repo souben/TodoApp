@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('partials/head'); -%>
+    </head>
+    <body>
+        <header>
+           <%- include('partials/header'); -%>
+        </header>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+                <form action="/send" method="POST">
+                  <div class="form-group">
+                    <label for="todo_name">Todo Name</label>
+                    <input type="text" name="todo_name" class="form-control" id="todo_name" placeholder="Enter your todo name ..."></br>
+                    <label for="todo_body" >Todo Body</label>
+                    <textarea class="form-control" name="todo_body" id="todo_body" rows="2"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block" >Submit</button>       
+                </form>
+            </div>
+            <div class="col mt-2">
+             <% if (t_name && t_body){ %>
+                <div class="alert alert-light" role="alert">
+                    <%= t_name %> : 
+                    <%= t_body %>
+                    <button class="btn btn-light">Edit</button>
+                    <button class="btn btn-danger">delete</button>
+            
+                </div>
+                <% } %>
+            </div>
+            
+    </body>
+
+</html>
